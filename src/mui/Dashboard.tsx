@@ -12,6 +12,8 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./mainListItems";
+import Container from "@mui/material/Container";
+import { Outlet } from "react-router-dom";
 
 const drawerWidth: number = 240;
 
@@ -74,12 +76,12 @@ export default function Dashboard() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box sx={{ display: "flex", height: "100vh" }}>
+      <Box sx={{ display: "flex", height: "100vh", width: "100vw" }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: "24px", // keep right padding when drawer closed
+              pr: "24px",
             }}
           >
             <IconButton
@@ -124,6 +126,20 @@ export default function Dashboard() {
             <Divider sx={{ my: 1 }} />
           </List>
         </Drawer>
+        <Box
+          component="main"
+          sx={{
+            backgroundColor: "#F9FBFD",
+            flexGrow: 1,
+            height: "100vh",
+            overflow: "auto",
+          }}
+        >
+          <Toolbar />
+          <div className="m-10">
+            <Outlet />
+          </div>
+        </Box>
       </Box>
     </ThemeProvider>
   );

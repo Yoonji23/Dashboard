@@ -1,10 +1,9 @@
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import Dashboard from "../mui/Dashboard";
 export const DashboardLayout = () => {
   return (
     <div className="flex">
       <Dashboard />
-      <Outlet />
     </div>
   );
 };

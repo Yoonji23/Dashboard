@@ -20,7 +20,7 @@ const currencyFormatter = (number: number) => {
 export default function Chart() {
   return (
     <>
-      <Card className="sm:mx-auto sm:max-w-lg">
+      <div className="circularChart">
         <h3 className="text-tremor-default font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
           Total expenses by category
         </h3>
@@ -64,7 +64,7 @@ export default function Chart() {
             </ListItem>
           ))}
         </List>
-      </Card>
+      </div>
     </>
   );
 }

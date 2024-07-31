@@ -34,9 +34,9 @@ const chartdata = [
 const dataFormatter = (number: number) =>
   Intl.NumberFormat("us").format(number).toString();
 
-export function BarChartContainer() {
+export function BarChartContainer({ data }: { data: any[] }) {
   return (
-    <div className="mt-[150px] w-[700px] h-[350px] border-2 border-red-700">
+    <div className="barChart">
       <h3 className="text-lg font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
         가맹점 대시보드
       </h3>

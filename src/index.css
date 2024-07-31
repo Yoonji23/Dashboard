@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.flex-center {
+  @apply flex  items-center;
+}
+.card-wrapper {
+  @apply flex flex-col justify-center whitespace-nowrap  bg-white p-[24px] border border-[#EDF2F9] w-[27vw] h-[88px] rounded-lg;
+}
+.border-test {
+  @apply border border-red-600;
+}
+.barChart {
+  @apply mt-8  bg-white w-[60%] h-[410px] rounded-lg border border-[#EDF2F9] p-[24px];
+}
+.circularChart {
+  @apply w-[40%] h-[410px] mt-8 bg-white p-[24px] border border-[#EDF2F9] rounded-lg;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
