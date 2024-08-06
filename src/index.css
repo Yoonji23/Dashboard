@@ -12,11 +12,11 @@
   @apply border border-red-600;
 }
 .barChart {
-  @apply mt-8 items-center justify-center  bg-white w-[100%] h-[410px] rounded-lg border border-[#EDF2F9] pt-[24px]
-  pb-[40px] pl-[24px] pr-[80px];
+  @apply mt-8 items-center justify-center bg-white w-full h-[500px] rounded-lg border border-[#EDF2F9]
+  pt-[24px] pb-[24px] pl-[24px] pr-[50px];
 }
 .donutChart {
-  @apply mt-8 items-center justify-center  bg-white w-[100%] h-[410px] rounded-lg border border-[#EDF2F9] p-[24px];
+  @apply mt-8 items-center justify-center  bg-white w-[80%] h-[500px] rounded-lg border border-[#EDF2F9] p-[24px];
 }
 .circularChart {
   @apply w-[40%] h-[410px] mt-8 bg-white p-[24px] border border-[#EDF2F9] rounded-lg;

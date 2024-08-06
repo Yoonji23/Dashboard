@@ -10,12 +10,12 @@ interface DataItem {
 
 export async function getCategoryMenuCnt(
   data: DataItem[]
-): Promise<{ name: string; value: number }[]> {
+): Promise<{ name: string; amount: number }[]> {
   const categorySums: { [key: string]: number } = {};
 
   data.forEach((item) => {
-    Object.entries(item.data.categoryCnt).forEach(([category, value]) => {
-      const numericValue = Number(value); // value를 number로 변환
+    Object.entries(item.data.categoryCnt).forEach(([category, amount]) => {
+      const numericValue = Number(amount); // value를 number로 변환
       if (!categorySums[category]) {
         categorySums[category] = 0;
       }
@@ -23,11 +23,12 @@ export async function getCategoryMenuCnt(
     });
   });
 
-  // 결과를 원하는 형태로 변환
-  const result = Object.entries(categorySums).map(([category, sum]) => ({
-    name: category,
-    value: sum,
-  }));
+  const result = Object.entries(categorySums)
+    .map(([category, sum]) => ({
+      name: category,
+      amount: sum,
+    }))
+    .sort((a, b) => b.amount - a.amount); // 내림차순 정렬
 
   return result;
 }
