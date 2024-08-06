@@ -34,8 +34,8 @@ export function DonutChart({ data }: { data: any[] }) {
 
   return (
     <div className="donutChart whitespace-nowrap">
-      <span className="text-[18px] text-[#12263F] font-semibold">
-        플랫폼 별 메뉴 수량
+      <span className="text-[18px]  text-[#95AAC9] font-semibold">
+        플랫폼 별 평균 메뉴 수량
       </span>
 
       <CustomPieChart

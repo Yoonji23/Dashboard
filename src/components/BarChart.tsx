@@ -23,7 +23,7 @@ export function BarChart({ data }: { data: any[] }) {
       <BarList
         data={result}
         showAnimation={true}
-        className="h-full w-full flex items-center justify-center"
+        className="h-full w-full flex items-center justify-center font-medium"
       />
     </div>
   );
