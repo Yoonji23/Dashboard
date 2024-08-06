@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# 📈 대시보드 구현하기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+제공 데이터:  2024년 6월 1일부터 2024년 6월 7일까지 4개 지점 조리 현황
+<br>
+<br>
 
-Currently, two official plugins are available:
+## 🔧 기술 스택 및 라이브러리
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React : 버전 17 이상
+- Typescript : 버전 5 이상
+- Tailwindcss : 버전 3 이상
+- Vite : 버전 5 이상
+- 템플릿 및 차트 UI : mui 라이브러리
+- 데이터 관리 : Firebase - Firestore
 
-## Expanding the ESLint configuration
+<br>
+<br>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📝 대시보드 구상
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- 평균 데이터
+  - 총 가맹점 수
+  - 데이터별 평균 값
+    <br><br>
+- 매장별 데이터
+  - 매장별 주문 건수
+  - 매장별 메뉴 수량
