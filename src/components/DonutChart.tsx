@@ -9,7 +9,7 @@ const CustomPieChart = styled(PieChart)({
   height: "100%",
 });
 
-export default function Chart({ data }: { data: any[] }) {
+export function DonutChart({ data }: { data: any[] }) {
   const [platformData, setPlatformData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Chart({ data }: { data: any[] }) {
   }, [data]);
 
   return (
-    <div className="barChart whitespace-nowrap">
+    <div className="donutChart whitespace-nowrap">
       <span className="text-[18px] text-[#12263F] font-semibold">
         플랫폼 별 메뉴 수량
       </span>

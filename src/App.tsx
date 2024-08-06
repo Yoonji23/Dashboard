@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState<any[]>([]);
-  console.log(1, "data", data);
 
   useEffect(() => {
     const getCook = async () => {

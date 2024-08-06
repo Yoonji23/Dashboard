@@ -1,6 +1,6 @@
 import { LineChartComponent } from "../components/LineChartComponent";
-import { BarChartContainer } from "../components/BarChartContainer";
-import Chart from "../components/Chart";
+import { BarChart } from "../components/BarChart";
+import { DonutChart } from "../components/DonutChart";
 import { CardModule } from "../module/CardModule";
 
 interface MainProps {
@@ -13,8 +13,8 @@ export const Main = (props: MainProps) => {
     <div className="flex flex-col">
       <CardModule data={data} />
       <div className="flex items-center gap-[24px]">
-        <BarChartContainer data={data} />
-        <Chart data={data} />
+        <BarChart data={data} />
+        <DonutChart data={data} />
       </div>
       <LineChartComponent />
     </div>
