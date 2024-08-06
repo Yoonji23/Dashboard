@@ -16,7 +16,7 @@ export const Main = (props: MainProps) => {
         <BarChart data={data} />
         <DonutChart data={data} />
       </div>
-      <LineChartComponent />
+      <LineChartComponent data={data} />
     </div>
   );
 };

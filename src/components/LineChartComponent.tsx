@@ -1,82 +1,40 @@
 import { LineChart } from "@tremor/react";
-
-const chartdata = [
-  {
-    date: "Jan 22",
-    SolarPanels: 2890,
-    Inverters: 2338,
-  },
-  {
-    date: "Feb 22",
-    SolarPanels: 2756,
-    Inverters: 2103,
-  },
-  {
-    date: "Mar 22",
-    SolarPanels: 3322,
-    Inverters: 2194,
-  },
-  {
-    date: "Apr 22",
-    SolarPanels: 3470,
-    Inverters: 2108,
-  },
-  {
-    date: "May 22",
-    SolarPanels: 3475,
-    Inverters: 1812,
-  },
-  {
-    date: "Jun 22",
-    SolarPanels: 3129,
-    Inverters: 1726,
-  },
-  {
-    date: "Jul 22",
-    SolarPanels: 3490,
-    Inverters: 1982,
-  },
-  {
-    date: "Aug 22",
-    SolarPanels: 2903,
-    Inverters: 2012,
-  },
-  {
-    date: "Sep 22",
-    SolarPanels: 2643,
-    Inverters: 2342,
-  },
-  {
-    date: "Oct 22",
-    SolarPanels: 2837,
-    Inverters: 2473,
-  },
-  {
-    date: "Nov 22",
-    SolarPanels: 2954,
-    Inverters: 3848,
-  },
-  {
-    date: "Dec 22",
-    SolarPanels: 3239,
-    Inverters: 3736,
-  },
-];
+import { useEffect, useState } from "react";
+import { getTimeCnt } from "../utils/getTimeCnt";
 
 const dataFormatter = (number: number) =>
-  `$${Intl.NumberFormat("us").format(number).toString()}`;
+  `${Intl.NumberFormat("us").format(number).toString()}`;
 
-export function LineChartComponent() {
+interface TimeCntProps {
+  date: string;
+  메뉴수량: number;
+}
+export function LineChartComponent({ data }: { data: any[] }) {
+  const [result, setResult] = useState<TimeCntProps[]>([]);
+  useEffect(() => {
+    if (data) {
+      const getTimeCntData = async () => {
+        try {
+          const res = await getTimeCnt(data);
+          setResult(res);
+        } catch {}
+      };
+      getTimeCntData();
+    }
+  }, [data]);
+
   return (
-    <LineChart
-      className="h-[400px] bg-white mt-8 border border-[#EDF2F9] rounded-lg p-[24px]"
-      data={chartdata}
-      index="date"
-      categories={["SolarPanels", "Inverters"]}
-      colors={["indigo", "rose"]}
-      valueFormatter={dataFormatter}
-      yAxisWidth={60}
-      onValueChange={(v) => console.log(v)}
-    />
+    <div className="h-[400px] bg-white mt-8 border border-[#EDF2F9] rounded-lg p-[24px]">
+      <span className="chartLabel">시간별 평균 주문 추이</span>
+      <LineChart
+        data={result}
+        index="date"
+        categories={["메뉴수량"]}
+        colors={["indigo"]}
+        valueFormatter={dataFormatter}
+        yAxisWidth={60}
+        onValueChange={(v) => console.log(v)}
+      />
+    </div>
   );
 }
