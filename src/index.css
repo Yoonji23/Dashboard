@@ -6,7 +6,7 @@
   @apply flex  items-center;
 }
 .card-wrapper {
-  @apply flex flex-col justify-center whitespace-nowrap  bg-white p-[24px] border border-[#EDF2F9] w-[27vw] h-[88px] rounded-lg;
+  @apply flex flex-col justify-center whitespace-nowrap  bg-white p-[24px] border border-[#EDF2F9] w-[30vw] h-[88px] rounded-lg;
 }
 .border-test {
   @apply border border-red-600;
@@ -16,13 +16,17 @@
   pt-[24px] pb-[24px] pl-[24px] pr-[50px];
 }
 .donutChart {
-  @apply mt-8 items-center justify-center  bg-white w-[80%] h-[500px] rounded-lg border border-[#EDF2F9] p-[24px];
+  @apply mt-8 items-center justify-center  bg-white w-[70%] h-[500px] rounded-lg border border-[#EDF2F9] p-[24px];
 }
 .circularChart {
   @apply w-[40%] h-[410px] mt-8 bg-white p-[24px] border border-[#EDF2F9] rounded-lg;
 }
 .chartLabel {
   @apply text-[18px]  text-[#95AAC9] font-semibold;
+}
+.barChartPerStore {
+  @apply mt-8 mb-8 items-center justify-center bg-white w-full h-[400px] rounded-lg border border-[#EDF2F9]
+  pt-[24px] pb-[24px] pl-[24px] pr-[50px];
 }
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

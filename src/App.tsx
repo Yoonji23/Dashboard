@@ -2,10 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DashboardLayout } from "./layout/DashboardLayout";
 import { Main } from "./page/Main";
 import { db } from "./firebase";
-
+import "./App.css";
 import { collection, query, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { getMenuCnt } from "./utils/getMenuCnt";
 
 function App() {
   const [data, setData] = useState<any[]>([]);
@@ -24,7 +23,6 @@ function App() {
     getCook();
   }, []);
 
-  getMenuCnt(data);
   return (
     <BrowserRouter>
       <Routes>

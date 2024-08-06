@@ -3,6 +3,8 @@ import { DonutChart } from "../components/DonutChart";
 import { CardModule } from "../module/CardModule";
 import { BarChart } from "../components/BarChart";
 import { BlueBarChart } from "../components/BlueBarChart";
+import { BarChartPerStore } from "../components/BarChartPerStore";
+
 interface MainProps {
   data: any[];
 }
@@ -16,8 +18,13 @@ export const Main = (props: MainProps) => {
         <BlueBarChart data={data} />
         <DonutChart data={data} />
       </div>
+
       <BarChart data={data} label="전체 메뉴별 평균 주문 수량" />
       <LineChartComponent data={data} />
+      <div className="flex gap-[24px]">
+        <BarChartPerStore data={data} value="order" />
+        <BarChartPerStore data={data} value="orderDetail" />
+      </div>
     </div>
   );
 };
