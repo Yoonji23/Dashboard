@@ -25,7 +25,7 @@ export function BlueBarChart({ data }: { data: any[] }) {
 
   return (
     <div className="barChart whitespace-nowrap">
-      <span className="chartLabel">메뉴 카테고리별 평균 주문 수량</span>
+      <span className="chartLabel">메뉴 카테고리별 주문 수량</span>
       <BarChart
         className="whitespace-nowrap"
         data={result}

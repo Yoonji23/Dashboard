@@ -19,7 +19,7 @@ export const Main = (props: MainProps) => {
         <DonutChart data={data} />
       </div>
 
-      <BarChart data={data} label="전체 메뉴별 평균 주문 수량" />
+      <BarChart data={data} label="메뉴별 전체 주문 수량" />
       <LineChartComponent data={data} />
       <div className="flex gap-[24px]">
         <BarChartPerStore data={data} value="order" />

@@ -25,7 +25,7 @@ export function LineChartComponent({ data }: { data: any[] }) {
 
   return (
     <div className="h-[400px] bg-white mt-8 border border-[#EDF2F9] rounded-lg p-[24px]">
-      <span className="chartLabel">시간별 평균 주문 추이</span>
+      <span className="chartLabel">시간별 주문 추이</span>
       <LineChart
         data={result}
         index="date"
