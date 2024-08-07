@@ -41,10 +41,7 @@ export const CardModule = ({ data }: { data: any[] }) => {
     <div className="flex justify-between">
       <Card result={totalStore} label="전체 가맹점 수" />
       <Card result={averageOrderCnt} label="평균 주문 건수" />
-      <Card
-        result={averageOrderDetailsCnt}
-        label="평균 메뉴 수량 / 일주일 기준"
-      />
+      <Card result={averageOrderDetailsCnt} label="평균 메뉴 수량" />
     </div>
   );
 };
