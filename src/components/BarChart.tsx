@@ -11,17 +11,17 @@ export function BarChart({ data, label }: BarChartProps) {
   const [result, setResult] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getMenuCntData = async () => {
       try {
         const res = await getMenuCnt(data);
         setResult(res);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        window.alert("차트 데이터를 가져오지 못했습니다.");
       }
     };
 
     if (data.length > 0) {
-      fetchData();
+      getMenuCntData();
     }
   }, [data]);
 

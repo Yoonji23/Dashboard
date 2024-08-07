@@ -13,7 +13,7 @@ export function DonutChart({ data }: { data: any[] }) {
   const [platformData, setPlatformData] = useState<any[]>([]);
 
   useEffect(() => {
-    const getPlatform = async () => {
+    const getPlatformData = async () => {
       try {
         const res = await getOrderPlatform(data);
 
@@ -29,7 +29,9 @@ export function DonutChart({ data }: { data: any[] }) {
         window.alert("차트 데이터를 가져오지 못했습니다.");
       }
     };
-    getPlatform();
+    if (data.length > 0) {
+      getPlatformData();
+    }
   }, [data]);
 
   return (

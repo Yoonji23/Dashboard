@@ -12,13 +12,15 @@ interface TimeCntProps {
 export function LineChartComponent({ data }: { data: any[] }) {
   const [result, setResult] = useState<TimeCntProps[]>([]);
   useEffect(() => {
-    if (data) {
-      const getTimeCntData = async () => {
-        try {
-          const res = await getTimeCnt(data);
-          setResult(res);
-        } catch {}
-      };
+    const getTimeCntData = async () => {
+      try {
+        const res = await getTimeCnt(data);
+        setResult(res);
+      } catch {
+        window.alert("차트 데이터를 가져오지 못했습니다.");
+      }
+    };
+    if (data.length > 0) {
       getTimeCntData();
     }
   }, [data]);

@@ -9,17 +9,17 @@ export function BlueBarChart({ data }: { data: any[] }) {
   const [result, setResult] = useState<any[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getCategoryMenuCntData = async () => {
       try {
         const res = await getCategoryMenuCnt(data);
         setResult(res);
       } catch (error) {
-        window.alert("오류가 발생했습니다.");
+        window.alert("차트 데이터를 가져오지 못했습니다.");
       }
     };
 
     if (data.length > 0) {
-      fetchData();
+      getCategoryMenuCntData();
     }
   }, [data]);
 
